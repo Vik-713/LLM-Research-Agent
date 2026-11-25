@@ -33,13 +33,17 @@ User Query / Research Topic
 | `indexer.py` | PDF ingestion, chunking with overlap, pure-Python TF-IDF `VectorStore`, index persistence, and sample PDF generator. |
 | `models.py` | Pydantic models (`Finding`, `Research`) defining the structured agent output. |
 | `tools.py` | Search tools: `search_web` (via `ddgs`) and `search_pdf` (via vector store). |
-| `.env` | Environment configuration (`GROQ_API_KEY`, `GROQ_MODEL`). |
+| `.env.example` | Template for environment configuration (`GROQ_API_KEY`, `GROQ_MODEL`). |
 | `requirements.txt` | Package dependencies. |
 
 ## Quick Start
 
 1. **Configure Environment**:
-   Ensure `.env` contains your Groq API key:
+   Copy `.env.example` to `.env` and configure your Groq API key:
+   ```bash
+   cp .env.example .env
+   ```
+   In `.env`:
    ```env
    GROQ_API_KEY=your_groq_api_key_here
    GROQ_MODEL=qwen/qwen3.8-27b
